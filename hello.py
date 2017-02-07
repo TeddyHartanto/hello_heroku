@@ -8,5 +8,6 @@ logging.basicConfig(level=logging.DEBUG)
 @app.route('/')
 def hello():
     logging.debug('saying hello')
-    return 'Hello Teddy!'
+    name = os.environ.get('NAME', 'Teddy')
+    return 'Hello {}!'.format(name)
 
